@@ -1,0 +1,7 @@
+{
+  "name":"leveldb",
+  "url":"https://github.com/google/leveldb.git",
+  "build":"make",
+  "include":"include",
+  "static":"out-static"
+}
