@@ -11,8 +11,8 @@ def install_library(name):
     if data:
         if download(data):
             if build(data):
-                return True
-    return False
+                return data
+    return None
 
 def fetch_json(name):
     res = requests.get("https://raw.githubusercontent.com"+\
@@ -39,7 +39,7 @@ def download(data):
     status = subprocess.check_call(
         ["git", "clone",
             data["url"], data["name"]
-        ],cwd=os.getcwd()+"/lib)
+        ],cwd=os.getcwd()+"/lib")
     if status == 0:
         print(green("*******************************"))
         print(green("OK!(^o^)! Git clone success !!"))
@@ -56,4 +56,13 @@ def build(data):
         data["build"].split(),
         cwd=os.getcwd()+"/lib/"+data["name"]
     )
-    print(status)
+
+def write(data):
+    with open('package.json', 'rw') as f:
+        package = json.load(f)
+        package["libraries"].append({
+              "name":"leveldb",
+              "include":"include",
+              "static":"out-static"
+        })
+        json.dump( package, f, sort_keys=True, indent=4)
