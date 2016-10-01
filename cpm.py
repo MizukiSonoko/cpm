@@ -3,6 +3,7 @@
 import argparse
 import sys
 from color import *
+from install import *
 __version__ = "0.0.1"
 
 def init():
@@ -12,9 +13,10 @@ def status():
     pass
 
 def install(name):
-    print(bold(red(name)))
-    print(yello(name))
-    print(name)
+    print(bold(blue("=================")))
+    print(bold(blue(" Install!! ")))
+    print(bold(blue("=================")))
+    install_library(name)
 
 def printHelp():
     print("usage: cpm \{init | install | status \} ")
