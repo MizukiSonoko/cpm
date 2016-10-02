@@ -1,0 +1,21 @@
+cmake_minimum_required(VERSION 3.0)
+PROJECT(@project_name CXX)
+
+ENABLE_LANGUAGE(C)
+
+SET(CMAKE_CXX_FLAGS "-Wall")
+SET(CMAKE_CXX_FLAGS_RELEASE "-O3")
+SET(CMAKE_CXX_FLAGS_DEBUG   "-Wextra -O0 -g")
+
+include_directories(
+  @include_directories
+)
+link_directories(
+  @link_directories
+)
+ADD_EXECUTABLE(@target_name
+  //ToDo_write
+)
+target_link_libraries(signature
+  @link_libraries
+)
