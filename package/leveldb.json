@@ -3,5 +3,8 @@
   "url":"https://github.com/google/leveldb.git",
   "build":"make",
   "include":"include",
-  "static":"out-static"
+  "static": {
+    "directory":"out-static",
+    "name": "leveldb"
+  }
 }
