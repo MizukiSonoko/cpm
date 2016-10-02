@@ -1,0 +1,18 @@
+{
+    "libraries": [
+        {
+            "include": "include",
+            "name": "leveldb",
+            "static": {
+                "directory": "out-static",
+                "name": "leveldb"
+            }
+        }
+    ],
+    "name": "cpm",
+    "CXX_version":"c++1y",
+    "target": "test",
+    "sources":[
+      "main.cpp"
+    ]
+}
