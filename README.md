@@ -1,1 +1,6 @@
 #  cpm
+
+# license   
+  
+MIT
+  
